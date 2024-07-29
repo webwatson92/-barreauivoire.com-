@@ -1,0 +1,10 @@
+<div class="mt-4">
+            <x-input-label for="profil_id" :value="__('Selectionner le profil de l\'utilisateur')" />
+            <select wire:model="profil_id" id="profil_id" class="block mt-1 w-full" name="profil_id">
+            <option value="">Sélectionner un profil</option>
+                @foreach($profil as $id => $libelle)
+                    <option value="{{ $id }}">{{ $libelle }}</option>
+                @endforeach
+            </select>
+            <x-input-error :messages="$errors->get('profil_id')" class="mt-2" />
+        </div>
